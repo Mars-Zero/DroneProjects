@@ -1,6 +1,8 @@
 from djitellopy import tello as drone
 from time import sleep
-import KeyPressModule as kp
+from Modules import KeyPressModule as kp
+
+#keyboard support for the drone
 
 kp.init()
 me = drone.Tello()

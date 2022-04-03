@@ -1,6 +1,8 @@
 import djitellopy as drone
 import cv2
 
+#image resize script for the drone
+
 me = drone.Tello()
 me.connect()
 print(me.get_battery())

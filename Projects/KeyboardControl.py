@@ -10,7 +10,7 @@ me.connect()
 print(me.get_battery())
 
 def getKeyboardInput():
-    lr, fb, ud, yv =0
+    lr, fb, ud, yv = 0, 0, 0, 0
     speed=50
 
     if kp.getKey("LEFT"): lr = -speed
@@ -28,10 +28,11 @@ def getKeyboardInput():
     if kp.getKey("q"): me.land()
     if kp.getKey("e"): me.takeoff()
 
-    return [ lr, fb, ud, yv]
+    return [lr, fb, ud, yv]
 
 
 while True:
     vals = getKeyboardInput()
+    #print(vals)
     me.send_rc_control(vals[0],vals[1],vals[2],vals[3])
     sleep(0.05)

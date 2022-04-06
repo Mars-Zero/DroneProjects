@@ -7,11 +7,14 @@ me = drone.Tello()
 me.connect()
 print(me.get_battery())
 
-
+global img
 me.streamon()
 
-while True:
+def ImageStream():
     img = me.get_frame_read().frame
-    img = cv2.resize(img,(360, 240))
-    cv2.imshow("Drona",img)
+    img = cv2.resize(img, (360, 240))
+    cv2.imshow("Drona", img)
     cv2.waitKey(1)
+
+while True:
+    ImageStream()

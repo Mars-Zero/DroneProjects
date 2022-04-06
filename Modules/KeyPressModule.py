@@ -1,8 +1,6 @@
 import pygame
 
-def init():
-    pygame.init()
-    win = pygame.display.set_mode((400,400))
+
 
 def getKey(keyName):
     sol = False
@@ -14,6 +12,13 @@ def getKey(keyName):
     pygame.display.update()
 
     return sol
+
+
+
+
+def init():
+    pygame.init()
+    win = pygame.display.set_mode((400,400))
 
 def main():
     if getKey("LEFT"):

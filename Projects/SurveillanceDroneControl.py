@@ -2,7 +2,6 @@ from djitellopy import tello as drone
 from time import time
 import cv2
 from Modules import KeyPressModule as kp
-from Modules import ImageCaptureModule as im
 
 #keyboard support for the drone
 
@@ -11,7 +10,7 @@ me = drone.Tello()
 me.connect()
 print(me.get_battery())
 
-
+global img
 me.streamon()
 
 def getKeyboardInput():
@@ -34,7 +33,7 @@ def getKeyboardInput():
     if kp.getKey("e"): me.takeoff()
 
     if kp.getKey('z'):
-        cv2.imwrite(f'Resources/Images/{time.time()}.jpg',im.img)
+        cv2.imwrite(f'Resources/Images/{time.time()}.jpg',img)
         time.sleep(0.3)#poate schimb asta
 
     return [lr, fb, ud, yv]
@@ -44,4 +43,6 @@ while True:
     vals = getKeyboardInput()
     #print(vals)
     me.send_rc_control(vals[0],vals[1],vals[2],vals[3])
-    im.ImageStream()
+    img = me.get_frame_read().frame
+    img = cv2.resize(img, (360, 240))
+    cv2.imshow("Drona", img)

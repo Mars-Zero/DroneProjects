@@ -8,7 +8,7 @@ me = drone.Tello()
 me.connect()
 print(me.get_battery())
 me.streamon()
-me.takeoff()
+#me.takeoff()
 
 w, h = 360, 240
 fbRange = [6200, 6800]

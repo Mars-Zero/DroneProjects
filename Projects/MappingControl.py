@@ -90,7 +90,7 @@ while True:
 
     img = np.zeros((1000, 1000, 3), np.uint8)
     if(points[-1][0] != vals[4] or points[-1][1] != vals[5]):
-        points.append(vals[4], vals[5])
+        points.append((vals[4], vals[5]))
 
     drawPoints(img, points)
     cv2.imshow("Map", img)

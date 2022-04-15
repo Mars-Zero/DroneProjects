@@ -1,5 +1,5 @@
 from djitellopy import tello as drone
-from time import time
+from datetime import datetime
 import cv2
 from Modules import KeyPressModule as kp
 
@@ -33,8 +33,8 @@ def getKeyboardInput():
     if kp.getKey("e"): me.takeoff()
 
     if kp.getKey('z'):
-        cv2.imwrite(f'Resources/Images/{time.time()}.jpg',img)
-        time.sleep(0.3)#poate schimb asta
+        cv2.imwrite(f'Resources/Images/{datetime.now().strftime("%d/%m/%Y %H:%M:%S")}.jpg',img)
+        #time.sleep(0.3)#poate schimb asta
 
     return [lr, fb, ud, yv]
 

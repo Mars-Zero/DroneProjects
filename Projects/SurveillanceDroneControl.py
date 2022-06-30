@@ -1,5 +1,6 @@
 from djitellopy import tello as drone
 from datetime import datetime
+import os
 import cv2
 from Modules import KeyPressModule as kp
 
@@ -11,6 +12,7 @@ me.connect()
 print(me.get_battery())
 
 global img
+image_path = r'Resources/Images/{datetime.now().strftime("%d/%m/%Y %H:%M:%S")}.png'
 me.streamon()
 
 def getKeyboardInput():
@@ -33,7 +35,8 @@ def getKeyboardInput():
     if kp.getKey("e"): me.takeoff()
 
     if kp.getKey('z'):
-        cv2.imwrite(f'Resources/Images/{datetime.now().strftime("%d/%m/%Y %H:%M:%S")}.jpg',img)
+        print("aici")
+        cv2.imwrite(image_path,img)
         #time.sleep(0.3)#poate schimb asta
 
     return [lr, fb, ud, yv]

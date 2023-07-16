@@ -66,7 +66,9 @@ Install dependencies
 
 ```bash
   python -m pip install pygame
-  python -m pip install open.cv
+  python -m pip install cv2
+  python -m pip install djitellopy
+  python -m pip install numpy
 ```
 
 Start which module you want in the Automation or Projects folders

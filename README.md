@@ -48,6 +48,34 @@ The Haar Cascades used in this project are provided [here](https://github.com/op
 
 
 
+## Run Locally
 
+Clone the project
+
+```bash
+  git clone https://github.com/Mars-Zero/DroneProjects
+```
+
+Go to the project directory
+
+```bash
+  cd DroneProjects
+```
+
+Install dependencies
+
+```bash
+  python -m pip install pygame
+  python -m pip install open.cv
+```
+
+Start which module you want in the Automation or Projects folders
+For example:
+
+```bash
+   python -i FaceTracking.py
+```
+
+Alternatively, open with your editor of choice and run FaceTracking.py
 
 

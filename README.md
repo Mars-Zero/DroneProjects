@@ -11,6 +11,9 @@ Some projects with the Ryze Dji Tello drone
 
 This is my collection of projects written mostly in Python with the purpose of completing different tasks with the [Ryze Tello drone](https://www.ryzerobotics.com/tello)
 
+Here is a preview of the scripts in action:
+![Preview](/Resources/MarsDroneFacetracking.gif)
+
 
 There are three different folders: Projects, Modules and Automation.
 
